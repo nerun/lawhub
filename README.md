@@ -20,9 +20,9 @@ Por que o LaTeX?
 
 2. Por ser em modo texto é fácil verificar as mudanças no GitHub, facilitando o trabalho de comparar as mudanças, já que em binário (ODT ou DOCX) seria impossível. Haveria outras opções, porém:
 
-&nbsp; &nbsp; &nbsp; &nbsp; (i) formato TXT é simples demais;
+&nbsp; &nbsp; &nbsp; &nbsp; (i) o formato TXT é simples demais;
 
-&nbsp; &nbsp; &nbsp; &nbsp; (ii) O formato markdown (MD) é um pouco melhor e muito mais fácil de aprender que o LaTeX, porém o LaTeX produz resultados melhores de visualização e conversão para outros formatos;
+&nbsp; &nbsp; &nbsp; &nbsp; (ii) o formato markdown (MD) é um pouco melhor e muito mais fácil de aprender que o LaTeX, porém o LaTeX produz resultados visuais melhores, mesmo quando convertido para outros formatos;
 
 &nbsp; &nbsp; &nbsp; &nbsp; (iii) haveria a possibilidade de criar uma Wiki usando o [mediawiki](https://www.mediawiki.org). As wikis permitem trabalho colaborativo, comparação de versões e links de download (externo). Porém, o formato não dá pra converter fácil. Cada artigo na wiki teria que ter um link para baixar o conteúdo em um formato amigável para edição. Dobraria o trabalho.
 
