@@ -50,21 +50,21 @@ $ sudo aptitude install pandoc
 ```
 Para converter use a fórmula:
 ```
-$ pandoc -f <formato origem> -t <formato destino> -o <arquivo destino> <arquivo origem>
+$ pandoc <arquivo original> -o <arquivo destino>
 ```
 Exemplos:
 
 Converter para *LibreOffice* ODT:
 ```
-$ pandoc -f latex -t odt -o UCC.odt UCC.tex
+$ pandoc UCC.tex -o UCC.odt
 ```
 Converter para *MS Word* DOCX:
 ```
-$ pandoc -f latex -t docx -o UCC.docx UCC.tex
+$ pandoc UCC.tex -o UCC.docx
 ```
 Converter para EPUB:
 ```
-$ pandoc -f latex -t epub -o UCC.epub UCC.tex
+$ pandoc UCC.tex -o UCC.epub
 ```
 
 É possível converter também para HTML e outros formatos, [consulte essa referência fácil](https://pandoc.org/demos.html).
