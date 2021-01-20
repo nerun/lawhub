@@ -1,17 +1,17 @@
 # LawHub
 Textos jurídicos, legislação, pesquisas e traduções.
 
-&nbsp; &nbsp; [1 Sobre o LaTeX](https://github.com/Nerun/lawhub#1-sobre-o-latex)
+1. [Sobre o LaTeX](https://github.com/Nerun/lawhub#1-sobre-o-latex)
 
-&nbsp; &nbsp; &nbsp; &nbsp; [1.1 Cursos online gratuitos](https://github.com/Nerun/lawhub#11-cursos)
+    1. [Cursos online gratuitos](https://github.com/Nerun/lawhub#11-cursos)
 
-&nbsp; &nbsp; &nbsp; &nbsp; [1.2 Programas de edição](https://github.com/Nerun/lawhub#12-editores)
+    2. [Programas de edição](https://github.com/Nerun/lawhub#12-editores)
 
-&nbsp; &nbsp; &nbsp; &nbsp; [1.3 Converter LaTeX para outros formatos](https://github.com/Nerun/lawhub#13-converter-latex-para-outros-formatos)
+    3. [Converter LaTeX para outros formatos](https://github.com/Nerun/lawhub#13-converter-latex-para-outros-formatos)
 
-&nbsp; &nbsp; [2 Fontes](https://github.com/Nerun/lawhub#2-fontes)
+2. [Fontes](https://github.com/Nerun/lawhub#2-fontes)
 
-&nbsp; &nbsp; [3 Links úteis](https://github.com/Nerun/lawhub#3-links-%C3%BAteis)
+3. [Links úteis](https://github.com/Nerun/lawhub#3-links-%C3%BAteis)
 
 ## 1 Sobre o LaTeX
 Por que o LaTeX?
@@ -22,7 +22,7 @@ Por que o LaTeX?
 
     - o formato TXT é simples demais;
 
-    - o formato markdown (MD) é um pouco melhor e muito mais fácil de aprender que o LaTeX, porém o LaTeX produz resultados visuais melhores, mesmo quando convertido para outros formatos;
+    - o formato MARKDOWN (MD) é um pouco melhor e muito mais fácil de aprender que o LaTeX, porém o LaTeX produz resultados visuais melhores, mesmo quando convertido para outros formatos;
 
     - haveria a possibilidade de criar uma Wiki usando o [mediawiki](https://www.mediawiki.org). As wikis permitem trabalho colaborativo, comparação de versões e links de download (externo). Porém, o formato não dá pra converter fácil. Cada artigo na wiki teria que ter um link para baixar o conteúdo em um formato amigável para edição. Dobraria o trabalho.
 
@@ -78,5 +78,6 @@ $ pandoc UCC.tex -o UCC.epub
 ## 3 Links úteis
 * DILLINGER. [Online Markdown Editor](https://dillinger.io) - ótimo site para testar seus markdowns
 * GITHUB. [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) - códigos markdown
+* MARKDOWN GUIDE. [Basic Syntax](https://www.markdownguide.org/basic-syntax) - excelente guia
 
 [[Voltar lá pra cima](https://github.com/Nerun/lawhub#)]
