@@ -3,9 +3,9 @@ Textos jurídicos, legislação, pesquisas e traduções.
 
 1. [Sobre o LaTeX](https://github.com/Nerun/lawhub#1-sobre-o-latex)
 
-    1. [Cursos online gratuitos](https://github.com/Nerun/lawhub#11-cursos)
+    1. [Cursos online gratuitos](https://github.com/Nerun/lawhub#11-cursos-online-gratuitos)
 
-    2. [Programas de edição](https://github.com/Nerun/lawhub#12-editores)
+    2. [Programas de edição](https://github.com/Nerun/lawhub#12-programas-de-edi%C3%A7%C3%A3o)
 
     3. [Converter LaTeX para outros formatos](https://github.com/Nerun/lawhub#13-converter-latex-para-outros-formatos)
 
@@ -20,11 +20,11 @@ Por que o LaTeX?
 
 2. Por ser em modo texto é fácil verificar as mudanças no GitHub, facilitando o trabalho de comparar as mudanças, já que em binário (ODT ou DOCX) seria impossível. Haveria outras opções, porém:
 
-    - o formato TXT é simples demais;
+    1. o formato TXT é simples demais;
 
-    - o formato MARKDOWN (MD) é um pouco melhor e muito mais fácil de aprender que o LaTeX, porém o LaTeX produz resultados visuais melhores, mesmo quando convertido para outros formatos;
+    2. o formato MARKDOWN (MD) é um pouco melhor e muito mais fácil de aprender que o LaTeX, porém o LaTeX produz resultados visuais melhores, mesmo quando convertido para outros formatos;
 
-    - haveria a possibilidade de criar uma Wiki usando o [mediawiki](https://www.mediawiki.org). As wikis permitem trabalho colaborativo, comparação de versões e links de download (externo). Porém, o formato não dá pra converter fácil. Cada artigo na wiki teria que ter um link para baixar o conteúdo em um formato amigável para edição. Dobraria o trabalho.
+    3. haveria a possibilidade de criar uma Wiki usando o [mediawiki](https://www.mediawiki.org). As wikis permitem trabalho colaborativo, comparação de versões e links de download (externo). Porém, o formato não dá pra converter fácil. Cada artigo na wiki teria que ter um link para baixar o conteúdo em um formato amigável para edição. Dobraria o trabalho.
 
 3. É fácil de converter para outros formatos (vide abaixo).
 
