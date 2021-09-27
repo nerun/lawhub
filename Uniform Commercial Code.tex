@@ -1,0 +1,113 @@
+% PREÂMBULO =======================================
+
+% Papel A4, fonte tamanho 12, paginação automática
+\documentclass[a4paper, 12pt]{article}
+
+% Margens
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+% Acentuação gráfica "ç", "ã", "é" etc.
+\usepackage[utf8]{inputenc}
+
+% Idioma português do Brasil
+% O pacote Babel apresentado na introdução permite o uso de caracteres especiais e também traduz alguns elementos do documento. Este pacote também ativa automaticamente as regras de hifenização apropriadas para o idioma que você escolher.
+\usepackage[brazil]{babel}
+
+% Indenta o primeiro parágrafo após uma seção, do contrário fica sem.
+\usepackage{indentfirst}
+
+% Permite adicionar hyperlinks.
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,	% Sumário fica preto
+    filecolor=magenta,
+    urlcolor=blue,		% Link fica azul
+}
+
+% Underline avançado.
+% Quando a frase tem letras que ficam abaixo da linha, como a letra "g", o underline fica muito afastado. Isto permite usar o smash:
+% \underline{\smash{Legal Information Institute}}}
+\usepackage{soul}
+
+% Remove a numeração das seções numeradas. Às vezes você precisa de uma seção não numerada e usa o \section*{•}, só que ele não aparece no sumário. Aí você teria que adicionar seção por seção com o \addcontentsline{toc}{section}{nome da seção}. Ficaria grande demais. Aqui basta essa linha e tudo se resolve.
+\setcounter{secnumdepth}{0}
+
+% Pré-configuração de listas (mais compactas)
+\usepackage{enumitem}
+\setlist[enumerate]{itemsep=1pt, parsep=1pt, topsep=1pt}
+\setlist[itemize]{itemsep=1pt, parsep=1pt, topsep=1pt}
+
+% Pacotes básicos de matemática pra usar \dfrac
+% AMSMATH - AMSFONTS - AMSSYMB
+% Equações - Símbolos matemáticos - Caracteres especiais
+\usepackage{amsmath, amsfonts, amssymb}
+
+% Lorem ipsum
+% usar \lipsum[1] para invocar apenas o 1º parágrafo
+\usepackage{lipsum}
+
+% CABEÇALHO
+\title{\textbf{Código Comercial Uniforme}}
+\author{\textit{tradução de}\\Daniel Dias Rodrigues\\ (\textit{13 de Janeiro de 2021})}
+\date{}
+
+% CORPO DO DOCUMENTO ==============================
+\begin{document}
+\maketitle
+
+Esta é uma tradução do \href{https://www.law.cornell.edu/ucc}{\underline{Uniform Commercial Code}} conforme publicado pelo \textit{Legal Information Institute} da Universidade Cornell.
+
+\begin{center}
+\rule{7cm}{0.4pt}
+\end{center}
+
+\textit{Copyright \textcopyright 1978, 1987, 1988, 1990, 1991, 1992, 1994, 1995, 1998, 2001, 2004, 2010, 2011, 2012 pelo ``American Law Institute" e pela ``National Conference of Commissioners on Uniform State Laws"; reproduzido, publicado e distribuído com a permissão do Conselho Editorial Permanente do Código Comercial Uniforme para os fins limitados de estudo, ensino e pesquisa acadêmica.}
+
+\vspace{5mm}
+
+\textit{O texto desta tradução é copyright \textcopyright 2021 de Daniel Dias Rodrigues. Alguns direitos reservados. Os direitos autorais sobre traduções são protegidos pela Convenção de Berna art. 2, alínea 3 (Decreto nº 75.699/75) e pela Lei de Direitos Autorais (``LDA") art. 7º caput e inciso XI (Lei Federal nº 9.610/98). Esta tradução é distribuída sob os termos da licença \href{https://creativecommons.org/licenses/by/4.0/deed.pt_BR}{\underline{\smash{Creative Commons BY 4.0}}}. Por essa licença tudo é permitido, inclusive alterar a tradução e lucrar com ela sem ter que pagar royalties, desde que você cite o nome do tradutor. Também pela LDA art. 53, inciso II, além do título original, você também é obrigado a citar o nome do tradutor. O tradutor é titular de direitos autorais (LDA art. 14). Isso é um direito moral do autor (LDA art. 24, II). Os direitos morais do autor são inalienáveis e irrenunciáveis (LDA art. 27).}
+
+\vspace{5mm}
+
+Se você encontrar erros nessa tradução, principalmente aqueles relacionados a termos jurídicos, eu ficaria muito feliz de ser informado a respeito. Sinta-se livre para sugerir uma redação alternativa também: \href{mailto:danieldiasr@gmail.com}{\underline{\smash{danieldiasr@gmail.com}}}.
+
+\begin{center}
+\rule{7cm}{0.4pt}
+\end{center}
+
+Nossa coleção tem como objetivo disponibilizar o C.C.U. na versão mais amplamente adotada pelos estados. \textbf{Isso significa que nem sempre usaremos a revisão mais recente se essa revisão não tiver alcançado ampla adoção entre as legislaturas americanas.}
+
+\vspace{5mm}
+
+Devido a restrições de licença, esta versão do C.C.U. não inclui os comentários oficiais.
+
+\pagebreak
+
+\tableofcontents
+
+\pagebreak
+
+\section{ARTIGO 2 - VENDAS (2002)}
+
+\subsection{PARTE 3 - OBRIGAÇÃO GERAL E FORMAÇÃO DO CONTRATO}
+
+\subsubsection{§ 2-315. Garantia implícita: adequação a uma finalidade específica.}
+
+Quando o vendedor, no momento da contratação, tiver conhecimento de qualquer propósito em particular para o qual o produto é necessário e de que o comprador está contando com a habilidade ou julgamento do vendedor para selecionar ou fornecer o produto adequado, então haverá, a não ser que seja excluída ou modificada na próxima seção, uma garantia implícita de que os produtos serão adequados para esse fim.
+
+\subsubsection{§ 2-316. Exclusão ou modificação de garantias.}
+
+\begin{enumerate}[label=(\arabic*)]
+	\item Palavras ou conduta relevantes para a criação de uma garantia expressa e palavras ou conduta tendentes a negar ou limitar a garantia, devem ser interpretadas sempre que possível como consistentes umas com as outras; mas, sujeito às disposições deste Artigo sobre liberdade condicional ou evidência extrínseca (Seção 2-202), a negação ou limitação não terá efeito na medida em que tal interpretação não seja razoável.
+	\item Sujeito à subseção (3), para excluir ou modificar a garantia implícita de comerciabilidade ou qualquer parte dela, o texto deve mencionar a comerciabilidade de forma conspícua, e para excluir ou modificar qualquer garantia implícita de adequação, a exclusão deve ser por escrito e conspícua. A linguagem para excluir todas as garantias implícitas de adequação será suficiente se ela declarar, por exemplo, que ``Não há garantias que se estendam para além daquelas aqui apresentadas".
+	\item Não obstante a subseção (2):
+	\begin{enumerate}
+		\item a menos que as circunstâncias indiquem o contrário, todas as garantias implícitas são excluídas por expressões como ``no estado em que se encontra", ``com todas as falhas" ou outra redação que, no entendimento comum, chama a atenção do comprador para a exclusão de garantias e deixa claro que não há nenhuma garantia implícita; e
+		\item quando o comprador, antes de celebrar o contrato, tiver examinado o produto, a amostra ou o modelo tão completamente quanto ele desejava, ou tiver se recusado a examinar o produto, não haverá garantia implícita no que diz respeito aos defeitos que um exame deveria, nessas circunstâncias, ter revelado para ele; e
+		\item uma garantia implícita também pode ser excluída ou modificada pelo curso da negociação, pelo curso do desempenho ou pelos usos e costumes do comércio.
+	\end{enumerate}
+	\item As indenizações por violação de garantia podem ser limitadas de acordo com as disposições deste Artigo sobre liquidação ou limitação de danos e sobre modificação contratual das indenizações (Seções 2-718 e 2-719).
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,152 @@
+% PREÂMBULO =======================================
+
+% Papel A4, fonte tamanho 12, paginação automática
+\documentclass[a4paper, 12pt]{article}
+
+% Margens
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+% Acentuação gráfica "ç", "ã", "é" etc.
+\usepackage[utf8]{inputenc}
+
+% Idioma português do Brasil
+% O pacote Babel apresentado na introdução permite o uso de caracteres especiais e também traduz alguns elementos do documento. Este pacote também ativa automaticamente as regras de hifenização apropriadas para o idioma que você escolher.
+\usepackage[brazilian]{babel}
+
+% Indenta o primeiro parágrafo após uma seção, do contrário fica sem.
+\usepackage{indentfirst}
+
+% Permite adicionar hyperlinks.
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,	% Sumário fica preto
+    filecolor=magenta,
+    urlcolor=blue,		% Link fica azul
+}
+
+% Underline avançado.
+% Quando a frase tem letras que ficam abaixo da linha, como a letra "g", o underline fica muito afastado. Isto permite usar o smash:
+% \underline{\smash{Legal Information Institute}}}
+\usepackage{soul}
+
+% Remove a numeração das seções numeradas. Às vezes você precisa de uma seção não numerada e usa o \section*{•}, só que ele não aparece no sumário. Aí você teria que adicionar seção por seção com o \addcontentsline{toc}{section}{nome da seção}. Ficaria grande demais. Aqui basta essa linha e tudo se resolve.
+\setcounter{secnumdepth}{0}
+
+% Pré-configuração de listas (mais compactas)
+\usepackage{enumitem}
+\setlist[enumerate]{itemsep=1pt, parsep=1pt, topsep=1pt}
+\setlist[itemize]{itemsep=1pt, parsep=1pt, topsep=1pt}
+
+% Pacotes básicos de matemática pra usar \dfrac
+% AMSMATH - AMSFONTS - AMSSYMB
+% Equações - Símbolos matemáticos - Caracteres especiais
+\usepackage{amsmath, amsfonts, amssymb}
+
+% Lorem ipsum
+% usar \lipsum[1] para invocar apenas o 1º parágrafo
+\usepackage{lipsum}
+
+% CABEÇALHO
+\title{\textbf{Código dos Estados Unidos}}
+\author{\textit{tradução de}\\Daniel Dias Rodrigues\\ (\textit{27 de Setembro de 2021})}
+\date{}
+
+% CORPO DO DOCUMENTO ==============================
+
+\begin{document}
+
+% Insere o cabeçalho definido no preâmbulo
+\maketitle
+
+% Sumário
+\tableofcontents
+
+\begin{center}
+Exemplo de Centralização
+\end{center}
+
+% alinhar à direita
+\begin{flushright}
+\textbf{Alin}\textit{har} à di\textbf{rei}ta
+\end{flushright}
+
+\underline{underline}
+
+\begin{center}
+\rule{7cm}{0.4pt}
+\end{center}
+
+\section{Introdução}
+
+A ideia central do \LaTeX\ é distanciar o autor o máximo possível da apresentação visual da informação.
+
+Ao invés de trabalhar com ideias visuais, o usuário é encorajado a trabalhar com conceitos mais lógicos --- e, consequentemente, independente da apresentação --- como capítulos, seções, ênfase e tabelas, sem contudo impedir o usuário da liberdade de indicar, expressamente, declarações de formatação.
+
+% Isto é um comentário que não será processado. Ele serve apenas para fazer anotações não incluídas no resultado final. Atenção ao símbolo do comentário: porcentagem (%).
+
+\subsection{Quebra de linha}
+
+Use barras duplas\\ pra quebrar uma linha.
+
+\subsection{Listas}
+
+% Os TABs não são necessários, é só pra facilitar a leitura do código.
+Exemplo de lista \textbf{numerada}:
+
+% Padrão: [left=5mm..10mm] a bolinha começa a 0,5cm da margem, e o texto a 1,0 cm da margem
+% [left=10mm..15mm] aqui e não no preâmbulo, porque só o primeiro nível deve começar com espaçamento maior da margem, se colocar no cabeçalho todos os níveis ficam muito longe.
+
+\begin{enumerate}[left=15mm..20mm]
+	\item Lorem ipsum dolor sit amet
+	\begin{enumerate}
+		\item Lorem ipsum dolor sit amet
+		\begin{enumerate}
+			\item Lorem ipsum dolor sit amet
+		\end{enumerate}
+	\end{enumerate}
+\end{enumerate}
+
+Exemplo de lista \textbf{\underline{não} numerada}:
+
+\begin{itemize}[left=15mm..20mm]
+	\item Lorem ipsum dolor sit amet
+	\begin{itemize}
+		\item Lorem ipsum dolor sit amet
+		\begin{itemize}
+			\item Lorem ipsum dolor sit amet
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+\subsection{Operações básicas e equações}
+
+\begin{itemize}[left=15mm..20mm]
+	\item adição: $a+b$
+	\item subtração: $a-b$
+	\item multiplicação: $a \cdot b$ ou $a \times b$
+	\item divisão: $a\div b$; ou fração esprimida pra caber na linha $\frac{a}{b}$
+	\item ou uma fração não esprimida na linha: $\dfrac{a}{b}$
+	\item potência: $a^{b+c}$; e $a^{10}$ nunca $a^10$
+	\item índice: $a_{10}$ nunca $a_10$
+\end{itemize}
+
+Equação centralizada, fórmula de Bhaskara: $$\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+
+\verb|\lipsum[1]|
+
+\vspace{5mm}
+
+\lipsum[1]
+
+\section{Outros}
+
+\begin{enumerate}[label=(\arabic*), left=15mm..22mm]
+	\item Copyright: \textbackslash{textcopyright} \textcopyright \space e \textbackslash{copyright} \copyright
+	\item Registered: \textbackslash{textregistered} \textregistered
+	\item Aspas \verb|``aqui"| - pra poder fechar as ``aspas direitos", do "contrário"
+	\item Pula uma linha, como acima: \verb|\{vspace}{5mm}|
+	\item mailto: \verb|\href{url}{\underline{\smash{link}}}|
+\end{enumerate}
+
+\end{document}
