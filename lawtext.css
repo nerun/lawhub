@@ -1,3 +1,8 @@
+hr {
+    border: 1px solid black;
+    width: 50%;
+}
+
 /* LISTA NUMERADA: letras entre parêntesis */
 ol.alpha {
     list-style: none;
