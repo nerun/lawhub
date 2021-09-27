@@ -1,0 +1,30 @@
+/* LISTA NUMERADA: letras entre parêntesis */
+ol.alpha {
+    list-style: none;
+    position: relative;
+}
+
+ol.alpha {
+    counter-reset: alpha;
+    padding-left: 0.5em;
+}
+ol.alpha > li:before {
+    counter-increment: alpha;
+    content:"(" counter(alpha, lower-alpha)") "
+}
+
+/* LISTA NUMERADA: números arábicos entre parêntesis */
+ol.arabic {
+    list-style: none;
+    position: relative;
+}
+
+ol.arabic {
+    counter-reset: item;
+    padding-left: 1em;
+}
+ol.arabic > li:before {
+    counter-increment: item;
+    content:"(" counter(item)") "
+}
+
