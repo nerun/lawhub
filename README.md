@@ -1,18 +1,6 @@
 # LawHub
 Textos jurídicos, legislação, pesquisas e traduções.
 
-1. [Sobre o LaTeX](https://github.com/Nerun/lawhub#1-sobre-o-latex)
-
-    1. [Cursos online gratuitos](https://github.com/Nerun/lawhub#11-cursos-online-gratuitos)
-
-    2. [Programas de edição](https://github.com/Nerun/lawhub#12-programas-de-edi%C3%A7%C3%A3o)
-
-    3. [Converter LaTeX para outros formatos](https://github.com/Nerun/lawhub#13-converter-latex-para-outros-formatos)
-
-2. [Fontes](https://github.com/Nerun/lawhub#2-fontes)
-
-3. [Links úteis](https://github.com/Nerun/lawhub#3-links-%C3%BAteis)
-
 ## 1 Sobre o LaTeX
 Por que o LaTeX?
 
