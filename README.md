@@ -67,3 +67,4 @@ $ pandoc UCC.tex -o UCC.epub
 * DILLINGER. [Online Markdown Editor](https://dillinger.io) - ótimo site para testar seus markdowns
 * GITHUB. [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) - códigos markdown
 * MARKDOWN GUIDE. [Basic Syntax](https://www.markdownguide.org/basic-syntax) - excelente guia
+* [SHIELDS IO](https://shields.io/) - crie e adicione *badges* ao seu projeto
