@@ -62,9 +62,3 @@ $ pandoc UCC.tex -o UCC.epub
 ## 2 Fontes
 * CASTRO, Marcílio Moreira de. [Dicionário de Direito, Economia e Contabilidade](https://www.dropbox.com/s/g8h20zuppojlz0b/CASTRO%2C%20Marc%C3%ADlio%20Moreira%20de%20-%20Dicion%C3%A1rio%20de%20Direito%2C%20Economia%20e%20Contabilidade.pdf?dl=0): português-inglês / inglês-português. 4. ed. Rio de Janeiro: Forense, 2013.
 * LEGAL INFORMATION INSTITUTE (LII) of Cornell Law School. [Uniform Commercial Code](https://www.law.cornell.edu/ucc).
-
-## 3 Links úteis
-* DILLINGER. [Online Markdown Editor](https://dillinger.io) - ótimo site para testar seus markdowns
-* GITHUB. [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) - códigos markdown
-* MARKDOWN GUIDE. [Basic Syntax](https://www.markdownguide.org/basic-syntax) - excelente guia
-* [SHIELDS IO](https://shields.io/) - crie e adicione *badges* ao seu projeto
