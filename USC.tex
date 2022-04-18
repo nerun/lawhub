@@ -6,6 +6,11 @@
 % Margens
 \usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
 
+\usepackage{setspace}
+%\doublespacing
+%\onehalfspacing
+%\singlespacing
+
 % Acentuação gráfica "ç", "ã", "é" etc.
 \usepackage[utf8]{inputenc}
 
@@ -49,7 +54,7 @@
 
 % CABEÇALHO
 \title{\textbf{Código dos Estados Unidos}}
-\author{\textit{tradução de}\\Daniel Dias Rodrigues\\ (\textit{27 de Setembro de 2021})}
+\author{\textit{tradução de}\\Daniel Dias Rodrigues\\ (\textit{18 de Abril de 2022})}
 \date{}
 
 % CORPO DO DOCUMENTO ==============================
@@ -59,94 +64,47 @@
 % Insere o cabeçalho definido no preâmbulo
 \maketitle
 
-% Sumário
-\tableofcontents
-
-\begin{center}
-Exemplo de Centralização
-\end{center}
-
-% alinhar à direita
-\begin{flushright}
-\textbf{Alin}\textit{har} à di\textbf{rei}ta
-\end{flushright}
-
-\underline{underline}
+Esta é uma tradução do \href{https://uscode.house.gov}{\underline{United States Code}} conforme publicado pelo \textit{Office of the Law Revision Counsel of the United States House of Representatives} (Escritório do Conselho de Revisão da Lei da Câmara dos Deputados dos Estados Unidos).
 
 \begin{center}
 \rule{7cm}{0.4pt}
 \end{center}
 
-\section{Introdução}
-
-A ideia central do \LaTeX\ é distanciar o autor o máximo possível da apresentação visual da informação.
-
-Ao invés de trabalhar com ideias visuais, o usuário é encorajado a trabalhar com conceitos mais lógicos --- e, consequentemente, independente da apresentação --- como capítulos, seções, ênfase e tabelas, sem contudo impedir o usuário da liberdade de indicar, expressamente, declarações de formatação.
-
-% Isto é um comentário que não será processado. Ele serve apenas para fazer anotações não incluídas no resultado final. Atenção ao símbolo do comentário: porcentagem (%).
-
-\subsection{Quebra de linha}
-
-Use barras duplas\\ pra quebrar uma linha.
-
-\subsection{Listas}
-
-% Os TABs não são necessários, é só pra facilitar a leitura do código.
-Exemplo de lista \textbf{numerada}:
-
-% Padrão: [left=5mm..10mm] a bolinha começa a 0,5cm da margem, e o texto a 1,0 cm da margem
-% [left=10mm..15mm] aqui e não no preâmbulo, porque só o primeiro nível deve começar com espaçamento maior da margem, se colocar no cabeçalho todos os níveis ficam muito longe.
-
-\begin{enumerate}[left=15mm..20mm]
-	\item Lorem ipsum dolor sit amet
-	\begin{enumerate}
-		\item Lorem ipsum dolor sit amet
-		\begin{enumerate}
-			\item Lorem ipsum dolor sit amet
-		\end{enumerate}
-	\end{enumerate}
-\end{enumerate}
-
-Exemplo de lista \textbf{\underline{não} numerada}:
-
-\begin{itemize}[left=15mm..20mm]
-	\item Lorem ipsum dolor sit amet
-	\begin{itemize}
-		\item Lorem ipsum dolor sit amet
-		\begin{itemize}
-			\item Lorem ipsum dolor sit amet
-		\end{itemize}
-	\end{itemize}
-\end{itemize}
-
-\subsection{Operações básicas e equações}
-
-\begin{itemize}[left=15mm..20mm]
-	\item adição: $a+b$
-	\item subtração: $a-b$
-	\item multiplicação: $a \cdot b$ ou $a \times b$
-	\item divisão: $a\div b$; ou fração esprimida pra caber na linha $\frac{a}{b}$
-	\item ou uma fração não esprimida na linha: $\dfrac{a}{b}$
-	\item potência: $a^{b+c}$; e $a^{10}$ nunca $a^10$
-	\item índice: $a_{10}$ nunca $a_10$
-\end{itemize}
-
-Equação centralizada, fórmula de Bhaskara: $$\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
-
-\verb|\lipsum[1]|
+\textit{O texto desta tradução é copyright \textcopyright 2022 de Daniel Dias Rodrigues. Alguns direitos reservados. Os direitos autorais sobre traduções são protegidos pela Convenção de Berna art. 2, alínea 3 (Decreto nº 75.699/75) e pela Lei de Direitos Autorais (``LDA") art. 7º caput e inciso XI (Lei Federal nº 9.610/98). Esta tradução é distribuída sob os termos da licença \href{https://creativecommons.org/licenses/by/4.0/deed.pt_BR}{\underline{\smash{Creative Commons BY 4.0}}}. Por essa licença tudo é permitido, inclusive alterar a tradução e lucrar com ela sem ter que pagar royalties, desde que você cite o nome do tradutor. Também pela LDA art. 53, inciso II, além do título original, você também é obrigado a citar o nome do tradutor. O tradutor é titular de direitos autorais (LDA art. 14). Isso é um direito moral do autor (LDA art. 24, II). Os direitos morais do autor são inalienáveis e irrenunciáveis (LDA art. 27).}
 
 \vspace{5mm}
 
-\lipsum[1]
+Para erros de tradução: \href{mailto:danieldiasr@gmail.com}{\underline{\smash{danieldiasr@gmail.com}}}.
 
-\section{Outros}
+\begin{center}
+\rule{7cm}{0.4pt}
+\end{center}
 
-\begin{enumerate}[label=(\arabic*), left=15mm..22mm]
-	\item Copyright: \textbackslash{textcopyright} \textcopyright \space e \textbackslash{copyright} \copyright
-	\item Registered: \textbackslash{textregistered} \textregistered
-	\item Aspas \verb|``aqui"| - pra poder fechar as ``aspas direitos", do "contrário"
-	\item Pula uma linha, como acima: \verb|\{vspace}{5mm}|
-	\item mailto: \verb|\href{url}{\underline{\smash{link}}}|
+\pagebreak
+
+\tableofcontents
+
+\pagebreak
+
+\section{TÍTULO 7 - DIREITOS AUTORAIS (``COPYRIGHTS")}
+
+\subsection{Capítulo 1 - ASSUNTO E ESCOPO DOS DIREITOS AUTORAIS}
+
+\subsubsection{§ 102 - Assunto dos direitos autorais: em geral}
+
+\begin{enumerate}[label=(\alph*)]
+	\item A proteção de direitos autorais subsiste, de acordo com este título, em obras originárias fixadas em qualquer meio de expressão tangível, agora conhecido ou desenvolvido posteriormente, a partir do qual possam ser percebidas, reproduzidas ou de outra forma comunicadas, diretamente ou com o auxílio de uma máquina ou dispositivo. Obras originárias incluem as seguintes categorias:
+	\begin{enumerate}[label=(\arabic*)]
+		\item obras literárias;
+		\item obras musicais, incluindo quaisquer palavras acompanhantes;
+		\item obras dramáticas, incluindo qualquer música acompanhante;
+		\item pantomimas e trabalhos coreográficos;
+		\item obras pictóricas, gráficas e escultóricas;
+		\item filmes e outras obras audiovisuais;
+		\item gravações de som; e
+		\item obras arquitetônicas.
+	\end{enumerate}
+	\item Em nenhum caso a proteção de direitos autorais para uma obra originária se estende a qualquer ideia, procedimento, processo, sistema, método de operação, conceito, princípio ou descoberta, independentemente da forma com que são descritos, explicados, ilustrados, ou incorporados em tal trabalho.
 \end{enumerate}
 
 \end{document}
