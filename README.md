@@ -62,3 +62,4 @@ $ pandoc UCC.tex -o UCC.epub
 ## 2 Fontes
 * CASTRO, Marcílio Moreira de. [Dicionário de Direito, Economia e Contabilidade](https://www.dropbox.com/s/g8h20zuppojlz0b/CASTRO%2C%20Marc%C3%ADlio%20Moreira%20de%20-%20Dicion%C3%A1rio%20de%20Direito%2C%20Economia%20e%20Contabilidade.pdf?dl=0): português-inglês / inglês-português. 4. ed. Rio de Janeiro: Forense, 2013.
 * LEGAL INFORMATION INSTITUTE (LII) of Cornell Law School. [Uniform Commercial Code](https://www.law.cornell.edu/ucc).
+* U.S. HOUSE OF REPRESENTATIVES. OFFICE OF THE LAW REVISION COUNSEL [United States Code](https://uscode.house.gov).
