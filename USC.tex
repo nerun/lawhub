@@ -1,67 +1,54 @@
-% PREÂMBULO =======================================
-
-% Papel A4, fonte tamanho 12, paginação automática
+% ===============================================================
+% PREÂMBULO =====================================================
+% ===============================================================
 \documentclass[a4paper, 12pt]{article}
-
-% Margens
 \usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
-
 \usepackage{setspace}
-%\doublespacing
-%\onehalfspacing
-%\singlespacing
-
-% Acentuação gráfica "ç", "ã", "é" etc.
-\usepackage[utf8]{inputenc}
-
-% Idioma português do Brasil
-% O pacote Babel apresentado na introdução permite o uso de caracteres especiais e também traduz alguns elementos do documento. Este pacote também ativa automaticamente as regras de hifenização apropriadas para o idioma que você escolher.
-\usepackage[brazilian]{babel}
-
-% Indenta o primeiro parágrafo após uma seção, do contrário fica sem.
+\singlespacing
 \usepackage{indentfirst}
 
-% Permite adicionar hyperlinks.
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=black,	% Sumário fica preto
-    filecolor=magenta,
-    urlcolor=blue,		% Link fica azul
-}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazilian]{babel}
 
-% Underline avançado.
-% Quando a frase tem letras que ficam abaixo da linha, como a letra "g", o underline fica muito afastado. Isto permite usar o smash:
-% \underline{\smash{Legal Information Institute}}}
-\usepackage{soul}
+\setlocalecaption{brazilian}{contents}{\begin{center}Sumário\end{center}}
+\setcounter{secnumdepth}{3}
 
-% Remove a numeração das seções numeradas. Às vezes você precisa de uma seção não numerada e usa o \section*{•}, só que ele não aparece no sumário. Aí você teria que adicionar seção por seção com o \addcontentsline{toc}{section}{nome da seção}. Ficaria grande demais. Aqui basta essa linha e tudo se resolve.
-\setcounter{secnumdepth}{0}
-
-% Pré-configuração de listas (mais compactas)
 \usepackage{enumitem}
 \setlist[enumerate]{itemsep=1pt, parsep=1pt, topsep=1pt}
 \setlist[itemize]{itemsep=1pt, parsep=1pt, topsep=1pt}
 
-% Pacotes básicos de matemática pra usar \dfrac
-% AMSMATH - AMSFONTS - AMSSYMB
-% Equações - Símbolos matemáticos - Caracteres especiais
 \usepackage{amsmath, amsfonts, amssymb}
-
-% Lorem ipsum
-% usar \lipsum[1] para invocar apenas o 1º parágrafo
+\usepackage{xcolor,soul}
 \usepackage{lipsum}
 
+\newcommand{\autor}{Daniel Dias Rodrigues}
+\newcommand{\titulo}{Código dos Estados Unidos}
+
 % CABEÇALHO
-\title{\textbf{Código dos Estados Unidos}}
-\author{\textit{tradução de}\\Daniel Dias Rodrigues\\ (\textit{18 de Abril de 2022})}
-\date{}
+\title{\textbf{\titulo}}
+\author{\textit{tradução de}\\\autor}
+\date{18 de Abril de 2022}
 
-% CORPO DO DOCUMENTO ==============================
+\usepackage[pdftex,
+            pdfauthor={\autor},
+            pdftitle={\titulo},
+            pdfsubject={Tradução de legislação americana},
+            pdfkeywords={Lei, Direito, Estados Unidos},
+            pdfproducer={Texmaker 5.0.3 (pdfTeX 1.40.22)},
+            pdfcreator={LaTeX com hyperref}]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,
+    urlcolor=blue,
+}
 
+% ===============================================================
+% CORPO DO DOCUMENTO ============================================
+% ===============================================================
 \begin{document}
 
-% Insere o cabeçalho definido no preâmbulo
 \maketitle
 
 Esta é uma tradução do \href{https://uscode.house.gov}{\underline{United States Code}} conforme publicado pelo \textit{Office of the Law Revision Counsel of the United States House of Representatives} (Escritório do Conselho de Revisão da Lei da Câmara dos Deputados dos Estados Unidos).
