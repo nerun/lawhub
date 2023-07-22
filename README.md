@@ -12,9 +12,9 @@ Por que o LaTeX?
 
     2. o formato MARKDOWN (MD) é um pouco melhor e muito mais fácil de aprender que o LaTeX, porém o LaTeX produz resultados visuais melhores, mesmo quando convertido para outros formatos;
 
-    3. haveria a possibilidade de criar uma Wiki usando o [mediawiki](https://www.mediawiki.org). As wikis permitem trabalho colaborativo, comparação de versões e links de download (externo). Porém, o formato não dá pra converter fácil. Cada artigo na wiki teria que ter um link para baixar o conteúdo em um formato amigável para edição. Dobraria o trabalho.
+    3. criar uma Wiki usando o [MediaWiki](https://www.mediawiki.org) ou [DokuWiki](https://www.dokuwiki.org). As wikis permitem trabalho colaborativo, comparação de versões e links de download (externo). Porém, o formato não dá pra converter fácil. Cada artigo na wiki teria que ter um link para baixar o conteúdo em um formato amigável para edição. Dobraria o trabalho.
 
-3. É fácil de converter para outros formatos (vide abaixo).
+3. É fácil de converter para outros formatos usando o pandoc (vide abaixo).
 
 4. Ao se dedicar ao LaTeX você estará aprendendo uma linguagem importante no meio acadêmico.
 
@@ -26,17 +26,17 @@ Rápido e fácil:
 ### 1.2 Programas de edição
 Texmaker (minha escolha):
 ```
-sudo aptitude install texmaker
+sudo apt install texmaker
 ```
 Gummi:
 ```
-sudo aptitude install gummi
+sudo apt install gummi
 ```
 
 ### 1.3 Converter LaTeX para outros formatos
 Instale:
 ```
-$ sudo aptitude install pandoc
+$ sudo apt install pandoc
 ```
 Para converter use a fórmula:
 ```
