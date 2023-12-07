@@ -1,0 +1,29 @@
+Código dos Estados Unidos
+=========================
+Daniel Dias Rodrigues <danieldiasr@gmail.com>
+
+Esta é uma tradução do link:https://uscode.house.gov[United States Code] conforme publicado pelo _Office of the Law Revision Counsel of the United States House of Representatives_ (Escritório do Conselho de Revisão da Lei da Câmara dos Deputados dos Estados Unidos).
+
+_O texto desta tradução é copyright de Daniel Dias Rodrigues. Alguns direitos reservados. Os direitos autorais sobre traduções são protegidos pela Convenção de Berna art. 2, alínea 3 (Decreto nº 75.699/75) e pela Lei de Direitos Autorais (``LDA'') art. 7º caput e inciso XI (Lei Federal nº 9.610/98). Esta tradução é distribuída sob os termos da licença link:https://creativecommons.org/licenses/by/4.0/deed.pt_BR[Creative Commons BY 4.0]. Por essa licença tudo é permitido, inclusive alterar a tradução e lucrar com ela sem ter que pagar royalties, desde que você cite o nome do tradutor. Também pela LDA art. 53, inciso II, além do título original, você também é obrigado a citar o nome do tradutor. O tradutor é titular de direitos autorais (LDA art. 14). Isso é um direito moral do autor (LDA art. 24, II). Os direitos morais do autor são inalienáveis e irrenunciáveis (LDA art. 27)._
+
+Para erros de tradução: mailto:danieldiasr@gmail.com[danieldiasr@gmail.com].
+
+''''
+
+== Título 7 -- DIREITOS AUTORAIS (``COPYRIGHTS'')
+
+=== Capítulo 1 -- ASSUNTO E ESCOPO DOS DIREITOS AUTORAIS
+
+==== § 102. Assunto dos direitos autorais: em geral
+
+.. A proteção de direitos autorais subsiste, de acordo com este título, em obras originárias fixadas em qualquer meio de expressão tangível, agora conhecido ou desenvolvido posteriormente, a partir do qual possam ser percebidas, reproduzidas ou de outra forma comunicadas, diretamente ou com o auxílio de uma máquina ou dispositivo. Obras originárias incluem as seguintes categorias:
+. obras literárias;
+. obras musicais, incluindo quaisquer palavras acompanhantes;
+. obras dramáticas, incluindo qualquer música acompanhante;
+. pantomimas e trabalhos coreográficos;
+. obras pictóricas, gráficas e escultóricas;
+. filmes e outras obras audiovisuais;
+. gravações de som; e
+. obras arquitetônicas.
+.. Em nenhum caso a proteção de direitos autorais para uma obra originária se estende a qualquer ideia, procedimento, processo, sistema, método de operação, conceito, princípio ou descoberta, independentemente da forma com que são descritos, explicados, ilustrados, ou incorporados em tal trabalho.
+
