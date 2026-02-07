@@ -1,85 +1,318 @@
-% ===============================================================
-% PREÂMBULO =====================================================
-% ===============================================================
-\documentclass[a5paper,10pt]{book}
-\usepackage[margin=1.5cm]{geometry}
-\usepackage{setspace}
-\singlespacing
-\usepackage{indentfirst}
+% ----------------------------------------------------------------
+% PREÂMBULO
+% ----------------------------------------------------------------
+\documentclass[a4paper, 12pt]{book}                   % Define o tipo de documento como artigo em papel A4 e fonte 12pt
+\usepackage{times}                                    % Usa a fonte Times
+\usepackage{microtype}                                % Melhora a tipografia com microajustes
+\usepackage[top=2cm, bottom=2cm, left=2cm,            % Define as margens da página
+  right=2cm]{geometry}
+\usepackage{setspace}                                 % Permite configurar espaçamento entre linhas
+\singlespacing                                        % Define espaçamento simples entre linhas
+\usepackage{indentfirst}                              % Indenta o primeiro parágrafo de cada seção
+\usepackage{titlesec}                                 % Permite customizar títulos de seções
 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}                           % Define codificação de entrada como UTF-8
+\usepackage[T1]{fontenc}                              % Usa codificação de fonte T1 (melhor para acentuação)
+\usepackage[brazilian]{babel}                         % Usa regras de hifenização e tradução para o português do Brasil
 
-\setlocalecaption{brazilian}{contents}{\centering Sumário}
-\setcounter{secnumdepth}{-2}
+\titleformat{\paragraph}                              % Define o estilo do título de parágrafos
+  {\normalfont\normalsize\bfseries}                   % Texto normal, tamanho normal, negrito
+  {\theparagraph}                                     % Exibe o número do parágrafo
+  {1em}                                               % Espaço entre o número e o título
+  {}
 
-\usepackage{enumitem}
-\setlist[enumerate]{itemsep=1pt, parsep=1pt, topsep=1pt}
-\setlist[itemize]{itemsep=1pt, parsep=1pt, topsep=1pt}
+\titlespacing*{\paragraph}                            % Define o espaçamento do título de parágrafo
+  {0pt}{1.5ex plus 1ex minus .2ex}{1ex plus .2ex}     % Espaçamentos antes e depois do parágrafo
 
-\usepackage{amsmath, amsfonts, amssymb}
-\usepackage{xcolor,soul}
-\usepackage{lipsum}
+\titleformat{\subparagraph}                           % Define o estilo do título de subparágrafos
+  {\normalfont\normalsize\bfseries\itshape}           % Texto normal, tamanho normal, negrito e itálico
+  {\thesubparagraph}                                  % Exibe o número do subparágrafo
+  {1em}                                               % Espaço entre o número e o título
+  {}
 
-\newcommand{\sublinhado}[1]{\underline{\smash{#1}}}
+\titlespacing*{\subparagraph}                         % Define o espaçamento do título de subparágrafo
+  {0pt}{1ex plus 0.5ex minus .2ex}{0.5ex plus .2ex}   % Espaçamentos antes e depois do subparágrafo
 
-\newcommand{\autor}{Daniel Dias Rodrigues}
-\newcommand{\titulo}{Código dos Estados Unidos}
+\addto\captionsbrazilian{                             % Altera o nome padrão da seção de sumário
+  \renewcommand{\contentsname}{\centering Sumário}    % Centraliza e renomeia a seção de sumário
+}
+\setcounter{secnumdepth}{-2}                          % Define o nível máximo de numeração de seções
 
-% CABEÇALHO
-\title{\textbf{\titulo}}
-\author{\textit{tradução de}\\\autor}
-\date{18 de Abril de 2022}
+\setlength{\skip\footins}{0.75cm}                     % Define o espaçamento entre o texto e as notas de rodapé
+\usepackage[hang]{footmisc}                           % Estilo de nota com recuo (pendente)
+\setlength{\footnotemargin}{3mm}                      % Define margem esquerda para notas de rodapé
 
-\usepackage[pdftex,
-            pdfauthor={\autor},
-            pdftitle={\titulo},
-            pdfsubject={Tradução de legislação americana},
-            pdfkeywords={Lei, Direito, Estados Unidos},
-            pdfproducer={Texmaker 5.0.3 (pdfTeX 1.40.22)},
-            pdfcreator={LaTeX com hyperref}]{hyperref}
+\usepackage{enumitem}                                 % Permite personalizar listas (itemize/enumerate)
+\setlist[enumerate]{itemsep=1pt, parsep=1pt,          % Espaçamentos em listas enumeradas
+  topsep=1pt}
+\setlist[itemize]{itemsep=1pt, parsep=1pt,            % Espaçamentos em listas com marcadores
+  topsep=1pt}
+
+\usepackage{amsmath, amsfonts, amssymb}               % Pacotes para fórmulas matemáticas e símbolos
+\usepackage[svgnames,x11names]{xcolor}                % Permite usar nomes SVG e X11 para cores
+\usepackage{lipsum}                                   % Gera texto de exemplo (Lorem Ipsum)
+\SetLipsumLanguage{brazilian}                         % Evita que o pacote lipsum tente mudar a língua pra latim
+\usepackage{soul}                                     % Permite sublinhar, riscar e destacar texto
+
+\newcommand{\autor}{Daniel Dias Rodrigues}            % Define comando personalizado para o autor
+\newcommand{\titulo}{Código dos Estados Unidos}       % Define comando personalizado para o título
+
+\title{\titulo}                                       % Define o título do artigo com destaque em LaTeX
+\author{\textit{tradução de}\\\autor}                 % Define o autor do artigo
+
+\usepackage{datetime}                                 % Permite customizar a data
+\renewcommand{\dateseparator}{ de }                   % Altera o separador padrão da data
+\newdateformat{brdate}{\THEDAY\ de                    % Define o formato da data em português
+  \monthname[\THEMONTH]\ de \THEYEAR}
+\date{\brdate\today}                                  % Define a data do documento como a data atual formatada
+
+\newcommand{\us}[1]{\underline{\smash{#1}}}           % Define comando que sublinha sem afetar o espaçamento vertical
+
+\usepackage[
+  pdfauthor={\autor},                                 % Define o autor nos metadados do PDF
+  pdftitle={\titulo},                                 % Define o título nos metadados do PDF
+  pdfsubject={Tradução de legislação americana},      % Campo de assunto do PDF
+  pdfkeywords={Lei, Direito, Estados Unidos}          % Define palavras-chave do PDF
+]{hyperref}                                           % Ativa links no documento
+
 \hypersetup{
-    colorlinks=true,
-    linkcolor=black,
-    filecolor=magenta,
-    urlcolor=blue,
+  colorlinks=true,                                    % Habilita links coloridos
+  linkcolor=black,                                    % Cor dos links internos
+  filecolor=magenta,                                  % Cor de links para arquivos
+  urlcolor=blue,                                      % Cor de links para URLs
 }
 
-% ===============================================================
-% CORPO DO DOCUMENTO ============================================
-% ===============================================================
+% ----------------------------------------------------------------
+% CORPO DO DOCUMENTO
+% ----------------------------------------------------------------
 \begin{document}
 
+\frontmatter                                          % Parte preliminar (sem numeração arábica)
 \maketitle
+\cleardoublepage
 
-Esta é uma tradução do \href{https://uscode.house.gov}{\sublinhado{United States Code}} conforme publicado pelo \textit{Office of the Law Revision Counsel of the United States House of Representatives} (Escritório do Conselho de Revisão da Lei da Câmara dos Deputados dos Estados Unidos).
+\mainmatter                                           % Conteúdo principal (numeração arábica começa)
 
-\textit{O texto desta tradução é copyright \textcopyright 2022 de Daniel Dias Rodrigues. Alguns direitos reservados. Os direitos autorais sobre traduções são protegidos pela Convenção de Berna art. 2, alínea 3 (Decreto nº 75.699/75) e pela Lei de Direitos Autorais (``LDA'') art. 7º caput e inciso XI (Lei Federal nº 9.610/98). Esta tradução é distribuída sob os termos da licença \href{https://creativecommons.org/licenses/by/4.0/deed.pt_BR}{\underline{\smash{Creative Commons BY 4.0}}}. Por essa licença tudo é permitido, inclusive alterar a tradução e lucrar com ela sem ter que pagar royalties, desde que você cite o nome do tradutor. Também pela LDA art. 53, inciso II, além do título original, você também é obrigado a citar o nome do tradutor. O tradutor é titular de direitos autorais (LDA art. 14). Isso é um direito moral do autor (LDA art. 24, II). Os direitos morais do autor são inalienáveis e irrenunciáveis (LDA art. 27).}
+Esta é uma tradução do \href{https://uscode.house.gov}{\us{United States Code}} conforme publicado pelo \textit{Office of the Law Revision Counsel of the United States House of Representatives} (Escritório do Conselho de Revisão da Lei da Câmara dos Deputados dos Estados Unidos).
 
-Para erros de tradução: \href{mailto:danieldiasr@gmail.com}{\underline{\smash{danieldiasr@gmail.com}}}.
+\textit{O texto desta tradução é copyright \textcopyright 2022 de Daniel Dias Rodrigues. Alguns direitos reservados. Os direitos autorais sobre traduções são protegidos pela Convenção de Berna art. 2, alínea 3 (Decreto nº 75.699/75) e pela Lei de Direitos Autorais (``LDA'') art. 7º caput e inciso XI (Lei Federal nº 9.610/98). Esta tradução é distribuída sob os termos da licença \href{https://creativecommons.org/licenses/by/4.0/deed.pt_BR}{\us{Creative Commons BY 4.0}}. Por essa licença tudo é permitido, inclusive alterar a tradução e lucrar com ela sem ter que pagar royalties, desde que você cite o nome do tradutor. Também pela LDA art. 53, inciso II, além do título original, você também é obrigado a citar o nome do tradutor. O tradutor é titular de direitos autorais (LDA art. 14). Isso é um direito moral do autor (LDA art. 24, II). Os direitos morais do autor são inalienáveis e irrenunciáveis (LDA art. 27).}
+
+Para erros de tradução: \href{mailto:danieldiasr@gmail.com}{\us{danieldiasr@gmail.com}}.
 
 \tableofcontents
 
-\part[TÍT. 17 -- DIREITOS AUTORAIS (``COPYRIGHTS'')]{Título 7\\ DIREITOS AUTORAIS (``COPYRIGHTS'')}
+\part[TÍT. 17 -- DIREITOS AUTORAIS (``COPYRIGHTS'')]{Título 17\\ DIREITOS AUTORAIS (``COPYRIGHTS'')}
 
 \chapter[Cap. 1 -- ASSUNTO E ESCOPO DOS DIREITOS AUTORAIS]{Capítulo 1\\ ASSUNTO E ESCOPO DOS DIREITOS AUTORAIS}
 
-\section{§ 102. Assunto dos direitos autorais: em geral}
+\section{§ 101. Definições}
+
+Salvo disposição em contrário neste título, tal como utilizados neste título, os seguintes termos e suas variantes têm o seguinte significado:
+
+Uma ``obra anônima'' é uma obra cujas cópias ou gravações sonoras não identificam nenhuma pessoa física como autor.
+
+Uma ``obra arquitetônica'' é o projeto de um edifício incorporado em qualquer meio tangível de expressão, incluindo um edifício, plantas arquitetônicas ou desenhos. A obra inclui a forma geral, bem como a disposição e composição dos espaços e elementos do projeto, mas não inclui características padrão individuais.
+
+``Obras audiovisuais'' são obras que consistem em uma série de imagens relacionadas que se destinam intrinsecamente a ser exibidas pelo uso de máquinas ou dispositivos, tais como projetores, visores ou equipamentos eletrônicos, juntamente com sons acompanhantes, se houver, independentemente da natureza dos objetos materiais, tais como filmes ou fitas, nos quais as obras estão incorporadas.
+
+A ``Convenção de Berna'' é a Convenção para a Proteção de Obras Literárias e Artísticas, assinada em Berna, Suíça, em 9 de setembro de 1886, e todos os atos, protocolos e revisões a ela referentes.
+
+A ``melhor edição'' de uma obra é a edição, publicada nos Estados Unidos em qualquer momento antes da data do depósito, que a Biblioteca do Congresso determinar ser a mais adequada para seus fins.
+
+Os ``filhos'' de uma pessoa são os descendentes diretos dessa pessoa, legítimos ou não, e quaisquer filhos legalmente adotados por essa pessoa.
+
+Uma ``obra coletiva'' é uma obra, como uma edição de periódico, antologia ou enciclopédia, na qual várias contribuições, constituindo obras separadas e independentes em si mesmas, são reunidas em um todo coletivo.
+
+Uma ``compilação'' é uma obra formada pela coleta e montagem de materiais pré-existentes ou de dados que são selecionados, coordenados ou organizados de tal forma que a obra resultante como um todo constitui uma obra original de autoria. O termo ``compilação'' inclui obras coletivas.
+
+Um ``programa de computador'' é um conjunto de instruções ou comandos a serem usados direta ou indiretamente em um computador para produzir um determinado resultado.
+
+``Cópias'' são objetos materiais, que não sejam fonogramas, nos quais uma obra é fixada por qualquer método atualmente conhecido ou desenvolvido posteriormente, e a partir dos quais a obra pode ser percebida, reproduzida ou comunicada de outra forma, diretamente ou com o auxílio de uma máquina ou dispositivo. O termo ``cópias'' inclui o objeto material, que não seja um fonograma, no qual a obra é fixada pela primeira vez.
+
+``Titular dos direitos autorais'', com relação a qualquer um dos direitos exclusivos compreendidos nos direitos autorais, refere-se ao titular desse direito específico.
+
+Um ``juiz de direitos autorais'' é um juiz de direitos autorais nomeado nos termos da seção 802 deste título e inclui qualquer indivíduo que atue como juiz de direitos autorais interino nos termos dessa seção.
+
+Uma obra é ``criada'' quando é fixada em uma cópia ou gravação sonora pela primeira vez; quando uma obra é preparada ao longo de um período de tempo, a parte dela que foi fixada em um determinado momento constitui a obra naquele momento, e quando a obra foi preparada em diferentes versões, cada versão constitui uma obra separada.
+
+Uma ``obra derivada'' é uma obra baseada em uma ou mais obras pré-existentes, como uma tradução, arranjo musical, dramatização, ficcionalização, versão cinematográfica, gravação de som, reprodução artística, resumo, condensação ou qualquer outra forma em que uma obra possa ser reformulada, transformada ou adaptada. Uma obra que consiste em revisões editoriais, anotações, elaborações ou outras modificações que, como um todo, representam uma obra original de autoria, é uma ``obra derivada''.
+
+Um ``dispositivo'', ``máquina'' ou ``processo'' é aquele agora conhecido ou desenvolvido posteriormente.
+
+Uma ``transmissão digital'' é uma transmissão total ou parcial em formato digital ou outro formato não analógico.
+
+``Exibir'' uma obra significa mostrar uma cópia dela, seja diretamente ou por meio de um filme, slide, imagem de televisão ou qualquer outro dispositivo ou processo ou, no caso de um filme ou outra obra audiovisual, mostrar imagens individuais de forma não sequencial.
+
+Um ``estabelecimento'' é uma loja, comércio ou qualquer local de negócios semelhante aberto ao público em geral com o objetivo principal de vender bens ou serviços, no qual a maior parte da área bruta não residencial é utilizada para esse fim e no qual obras musicais não dramáticas são executadas publicamente.
+
+O termo ``ganho financeiro'' inclui o recebimento, ou a expectativa de recebimento, de qualquer coisa de valor, incluindo o recebimento de outras obras protegidas por direitos autorais.
+
+Uma obra é ``fixada'' em um meio tangível de expressão quando sua incorporação em uma cópia ou gravação sonora, pelo autor ou sob sua autoridade, é suficientemente permanente ou estável para permitir que seja percebida, reproduzida ou comunicada de outra forma por um período superior a uma duração transitória. Uma obra que consiste em sons, imagens ou ambos, que estão sendo transmitidos, é ``fixada'' para os fins deste título se a fixação da obra estiver sendo feita simultaneamente com sua transmissão.
+
+Um ``estabelecimento de serviços alimentares ou bebidas'' é um restaurante, pousada, bar, taberna ou qualquer outro local de negócios semelhante no qual o público ou clientes se reúnem com o objetivo principal de serem servidos com comida ou bebida, no qual a maior parte da área bruta não residencial é utilizada para esse fim e no qual obras musicais não dramáticas são executadas publicamente.
+
+A ``Convenção de Genebra sobre Fonogramas'' é a Convenção para a Proteção dos Produtores de Fonogramas contra a Duplicação Não Autorizada de Seus Fonogramas, celebrada em Genebra, Suíça, em 29 de outubro de 1971.
+
+A ``área bruta em metros quadrados'' de um estabelecimento significa todo o espaço interior desse estabelecimento e qualquer espaço externo adjacente usado para servir os clientes, seja sazonalmente ou de outra forma.
+
+Os termos ``incluindo'' e ``tais como'' são ilustrativos e não limitativos.
+
+Um ``acordo internacional'' é:
+
+\begin{enumerate}[leftmargin=4em, label=(\arabic*)]
+    \item a Convenção Universal sobre Direitos Autorais;
+    \item a Convenção de Genebra sobre Fonogramas;
+    \item a Convenção de Berna;
+    \item o Acordo da OMC;
+    \item o Tratado da OMPI sobre Direitos Autorais;
+    \item o Tratado da OMPI sobre Prestações e Fonogramas; e
+    \item qualquer outro tratado de direitos autorais do qual os Estados Unidos sejam parte.
+\end{enumerate}
+
+Uma ``obra conjunta'' é uma obra preparada por dois ou mais autores com a intenção de que suas contribuições sejam fundidas em partes inseparáveis ou interdependentes de um todo unitário.
+
+``Obras literárias'' são obras, exceto obras audiovisuais, expressas em palavras, números ou outros símbolos ou índices verbais ou numéricos, independentemente da natureza dos objetos materiais, tais como livros, periódicos, manuscritos, fonogramas, filmes, fitas, discos ou cartões, nos quais estão incorporadas.
+
+O termo ``instalação de exibição de filmes'' significa um cinema, sala de projeção ou outro local que seja utilizado principalmente para a exibição de um filme protegido por direitos autorais, se tal exibição for aberta ao público ou for feita a um grupo reunido de espectadores fora do círculo normal de uma família e seus conhecidos sociais.
+
+``Filmes'' são obras audiovisuais que consistem em uma série de imagens relacionadas que, quando exibidas em sucessão, transmitem uma impressão de movimento, juntamente com sons acompanhantes, se houver.
+
+``Executar'' uma obra significa recitar, interpretar, tocar, dançar ou atuar, seja diretamente ou por meio de qualquer dispositivo ou processo ou, no caso de um filme ou outra obra audiovisual, exibir suas imagens em qualquer sequência ou tornar audíveis os sons que a acompanham.
+
+Uma ``sociedade de direitos de execução pública'' é uma associação, corporação ou outra entidade que licencia a execução pública de obras musicais não dramáticas em nome dos detentores dos direitos autorais dessas obras, tais como a American Society of Composers, Authors and Publishers (ASCAP), a Broadcast Music, Inc. (BMI) e a SESAC, Inc.
+
+``Fonogramas'' são objetos materiais nos quais sons, exceto aqueles que acompanham um filme ou outra obra audiovisual, são fixados por qualquer método conhecido atualmente ou desenvolvido posteriormente, e a partir dos quais os sons podem ser percebidos, reproduzidos ou comunicados de outra forma, seja diretamente ou com o auxílio de uma máquina ou dispositivo. O termo ``fonogramas'' inclui o objeto material no qual os sons são fixados pela primeira vez.
+
+``Obras pictóricas, gráficas e esculturais'' incluem obras bidimensionais e tridimensionais de belas-artes, artes gráficas e artes aplicadas, fotografias, gravuras e reproduções de arte, mapas, globos, gráficos, diagramas, modelos e desenhos técnicos, incluindo plantas arquitetônicas. Tais obras devem incluir obras de artesanato artístico no que diz respeito à sua forma, mas não aos seus aspectos mecânicos ou utilitários; o design de um artigo útil, conforme definido nesta seção, deve ser considerado uma obra pictórica, gráfica ou escultórica somente se, e somente na medida em que, tal design incorporar características pictóricas, gráficas ou escultóricas que possam ser identificadas separadamente dos aspectos utilitários do artigo e sejam capazes de existir independentemente deles.
+
+Para os fins da seção 513, um ``proprietário'' é um indivíduo, corporação, parceria ou outra entidade, conforme o caso, que possui um estabelecimento ou um serviço de alimentação ou estabelecimento de bebidas, exceto que nenhum proprietário ou operador de uma estação de rádio ou televisão licenciada pela Comissão Federal de Comunicações, sistema de cabo ou operadora de satélite, serviço ou programador de cabo ou satélite, provedor de serviços online ou acesso à rede ou operador de instalações para tal, empresa de telecomunicações ou qualquer outro serviço ou programador de áudio ou audiovisual conhecido atualmente ou que venha a ser desenvolvido no futuro, serviço comercial de música por assinatura ou proprietário ou operador de qualquer outro serviço de transmissão, será, em nenhuma circunstância, considerado proprietário.
+
+Uma ``obra pseudônima'' é uma obra cujas cópias ou gravações fonográficas têm o autor identificado sob um nome fictício.
+
+``Publicação'' é a distribuição de cópias ou fonogramas de uma obra ao público por meio de venda ou outra transferência de propriedade, ou por aluguel, arrendamento ou empréstimo. A oferta de distribuição de cópias ou fonogramas a um grupo de pessoas para fins de distribuição posterior, execução pública ou exibição pública constitui publicação. A execução pública ou exibição de uma obra não constitui, por si só, publicação.
+
+Executar ou exibir uma obra ``publicamente'' significa:
+
+(1) executá-la ou exibi-la em um local aberto ao público ou em qualquer local onde um número substancial de pessoas fora do círculo normal de uma família e seus conhecidos sociais esteja reunido; ou
+
+(2) transmitir ou comunicar de outra forma uma execução ou exibição da obra para um local especificado pela cláusula (1) ou para o público, por meio de qualquer dispositivo ou processo, independentemente de os membros do público capazes de receber a execução ou exibição a receberem no mesmo local ou em locais separados e ao mesmo tempo ou em momentos diferentes.
+
+``Registro'', para os fins das seções 205(c)(2), 405, 406, 410(d), 411, 412 e 506(e), significa um registro de uma reivindicação no prazo original ou renovado e prorrogado dos direitos autorais.
+
+``Gravações sonoras'' são obras que resultam da fixação de uma série de sons musicais, falados ou outros, mas não incluindo os sons que acompanham um filme ou outra obra audiovisual, independentemente da natureza dos objetos materiais, tais como discos, fitas ou outros fonogramas, nos quais estão incorporados.
+
+``Estado'' inclui o Distrito de Columbia e o Estado Livre Associado de Porto Rico, e quaisquer territórios aos quais este título seja aplicável por uma lei do Congresso.
+
+Uma ``transferência de propriedade de direitos autorais'' é uma cessão, hipoteca, licença exclusiva ou qualquer outra transmissão, alienação ou hipoteca de direitos autorais ou de quaisquer direitos exclusivos compreendidos em direitos autorais, seja ela limitada ou não em tempo ou local de efeito, mas não incluindo uma licença não exclusiva.
+
+Um ``programa de transmissão'' é um conjunto de materiais que, como um agregado, foi produzido com o único propósito de transmissão ao público em sequência e como uma unidade.
+
+``Transmitir'' uma apresentação ou exibição é comunicá-la por qualquer dispositivo ou processo pelo qual imagens ou sons são recebidos além do local de onde são enviados.
+
+Uma ``parte do tratado'' é um país ou organização intergovernamental que não seja os Estados Unidos e que seja parte de um acordo internacional.
+
+Os ``Estados Unidos'', quando usados em sentido geográfico, compreendem os vários estados, o Distrito de Columbia e o Estado Livre Associado de Porto Rico, bem como os territórios organizados sob a jurisdição do Governo dos Estados Unidos.
+
+Para os fins da seção 411, uma obra é uma ``obra dos Estados Unidos'' somente se:
+
+\begin{enumerate}[leftmargin=4em, label=(\arabic*)]
+    \item no caso de uma obra publicada, a obra for publicada pela primeira vez:
+    \begin{enumerate}[label=(\Alph*)]
+        \item nos Estados Unidos;
+        \item simultaneamente nos Estados Unidos e em outra parte ou partes do tratado, cuja lei conceda um prazo de proteção de direitos autorais igual ou superior ao prazo previsto nos Estados Unidos;
+        \item simultaneamente nos Estados Unidos e em uma nação estrangeira que não seja parte do tratado; ou
+        \item em uma nação estrangeira que não seja parte do tratado, e todos os autores da obra sejam nacionais, domiciliados ou residentes habituais dos Estados Unidos ou, no caso de uma obra audiovisual, pessoas jurídicas com sede nos Estados Unidos;
+    \end{enumerate}
+    \item no caso de uma obra não publicada, todos os autores da obra sejam nacionais, domiciliados ou residentes habituais dos Estados Unidos ou, no caso de uma obra audiovisual não publicada, todos os autores sejam pessoas jurídicas com sede nos Estados Unidos; ou
+    \item no caso de uma obra pictórica, gráfica ou escultórica incorporada a um edifício ou estrutura, o edifício ou estrutura esteja localizado nos Estados Unidos.
+\end{enumerate}
+
+Um ``artigo útil'' é um artigo com uma função utilitária intrínseca que não se limita a retratar a aparência do artigo ou a transmitir informações. Um artigo que normalmente faz parte de um artigo útil é considerado um ``artigo útil''.
+
+A ``viúva'' ou o ``viúvo'' do autor é o cônjuge sobrevivente do autor, nos termos da lei do domicílio do autor no momento da sua morte, independentemente de o cônjuge ter voltado a casar posteriormente.
+
+O ``Tratado da OMPI sobre Direitos Autorais'' é o Tratado da OMPI sobre Direitos Autorais celebrado em Genebra, Suíça, em 20 de dezembro de 1996.
+
+O ``Tratado da OMPI sobre Prestações e Fonogramas'' é o Tratado da OMPI sobre Prestações e Fonogramas celebrado em Genebra, Suíça, em 20 de dezembro de 1996.
+
+Uma ``obra de arte visual'' é:
+
+\begin{enumerate}[leftmargin=4em, label=(\arabic*)]
+    \item uma pintura, desenho, gravura ou escultura, existente em uma única cópia, em uma edição limitada de 200 cópias ou menos, assinadas e numeradas consecutivamente pelo autor ou, no caso de uma escultura, em múltiplas esculturas fundidas, esculpidas ou fabricadas, em 200 ou menos, numeradas consecutivamente pelo autor e com a assinatura ou outra marca de identificação do autor; ou
+    \item uma imagem fotográfica estática produzida apenas para fins de exibição, existente em uma única cópia assinada pelo autor, ou em uma edição limitada de 200 cópias ou menos, assinadas e numeradas consecutivamente pelo autor.
+\end{enumerate}
+
+Uma obra de arte visual não inclui:
+
+\begin{enumerate}[leftmargin=4em, label=(\Alph*)]
+    \item 
+    \begin{enumerate}[label=(\roman*)]
+        \item qualquer cartaz, mapa, globo, gráfico, desenho técnico, diagrama, modelo, arte aplicada, filme ou outra obra audiovisual, livro, revista, jornal, periódico, banco de dados, serviço de informação eletrônica, publicação eletrônica ou publicação semelhante;
+        \item qualquer item de merchandising ou material ou recipiente publicitário, promocional, descritivo, de cobertura ou embalagem;
+        \item qualquer porção ou parte de qualquer item descrito na cláusula (i) ou (ii);
+\end{enumerate}
+    \item qualquer obra feita por encomenda; ou
+    \item qualquer obra não sujeita à proteção de direitos autorais sob este título.
+\end{enumerate}
+
+Uma ``obra do Governo dos Estados Unidos'' é uma obra preparada por um funcionário ou empregado do Governo dos Estados Unidos como parte das funções oficiais dessa pessoa.
+
+Uma ``obra feita por encomenda'' é:
+
+\begin{enumerate}[leftmargin=4em, label=(\arabic*)]
+    \item uma obra preparada por um funcionário no âmbito do seu emprego; ou
+    \item uma obra especialmente encomendada ou comissionada para uso como contribuição a uma obra coletiva, como parte de um filme ou outra obra audiovisual, como tradução, como obra complementar, como compilação, como texto instrutivo, como teste, como material de respostas para um teste ou como atlas, se as partes concordarem expressamente em um instrumento escrito assinado por elas que a obra será considerada uma obra feita por encomenda. Para os fins da frase anterior, uma ``obra complementar'' é uma obra preparada para publicação como um complemento secundário a uma obra de outro autor com o objetivo de introduzir, concluir, ilustrar, explicar, revisar, comentar ou auxiliar no uso da outra obra, como prefácios, posfácios, ilustrações pictóricas, mapas, gráficos, tabelas, notas editoriais, arranjos musicais, material de respostas para testes, bibliografias, apêndices e índices, e um ``texto instrutivo'' é uma obra literária, pictórica ou gráfica preparada para publicação e com o objetivo de ser usada em atividades instrucionais sistemáticas.
+\end{enumerate}
+
+Ao determinar se uma obra é elegível para ser considerada uma obra feita por encomenda nos termos do parágrafo (2), nem a alteração contida na seção 1011(d) da Lei de Reforma Geral da Propriedade Intelectual e Comunicações de 1999, conforme promulgada pela seção 1000(a)(9) da Lei Pública 106–113, nem a supressão das palavras adicionadas por essa alteração —
+
+\begin{enumerate}[leftmargin=4em, label=(\Alph*)]
+    \item será considerada ou de outra forma terá qualquer significado jurídico, ou
+    \item será interpretada como indicando a aprovação ou desaprovação do Congresso, ou aquiescência, a qualquer decisão judicial, pelos tribunais ou pelo Escritório de Direitos Autorais. O parágrafo (2) deve ser interpretado como se tanto a seção 2(a)(1) da Lei de Correções de Direitos Autorais e Trabalhos Feitos por Encomenda de 2000 quanto a seção 1011(d) da Lei de Reforma Geral da Propriedade Intelectual e das Comunicações de 1999, conforme promulgada pela seção 1000(a)(9) da Lei Pública 106 –113, nunca tivessem sido promulgadas, e sem levar em consideração qualquer inação ou conhecimento por parte do Congresso, em qualquer momento, de quaisquer determinações judiciais.
+\end{enumerate}
+
+Os termos ``Acordo da OMC'' e ``país membro da OMC'' têm os significados atribuídos a esses termos nos parágrafos (9) e (10), respectivamente, da seção 2 da Lei dos Acordos da Rodada Uruguai.
+
+\subsection{Histórico legislativo}
+
+(Pub. L. 94–553, título I, § 101, 19 de outubro de 1976, 90 Stat. 2541; Pub. L. 96–517, § 10(a), 12 de dezembro de 1980, 94 Stat. 3028; Pub. L. 100–568, § 4(a)(1), 31 de outubro de 1988, 102 Stat. 2854; Pub. L. 101–650, título VI, § 602, título VII, § 702, 1º de dezembro de 1990, 104 Stat. 5128, 5133; Pub. L. 102–307, título I, § 102(b)(2), 26 de junho de 1992, 106 Stat. 266; Pub. L. 102–563, § 3(b), 28 de outubro de 1992, 106 Stat. 4248; Pub. L. 104–39, § 5(a), 1º de novembro de 1995, 109 Stat. 348; Pub. L. 105–80, § 12(a)(3), 13 de novembro de 1997, 111 Stat. 1534; Pub. L. 105–147, § 2(a), 16 de dezembro de 1997, 111 Stat. 2678; Pub. L. 105–298, título II, § 205, 27 de outubro de 1998, 112 Stat. 2833; Pub. L. 105–304, título I, § 102(a), 28 de outubro de 1998, 112 Stat. 2861; Pub. L. 106–44, § 1(g)(1), 5 de agosto de 1999, 113 Stat. 222; Pub. L. 106–113, div. B, § 1000(a)(9) [título I, § 1011(d)], 29 de novembro de 1999, 113 Stat. 1536, 1501A–544; Pub. L. 106–379, § 2(a), 27 de outubro de 2000, 114 Stat. 1444; Pub. L. 107–273, div. C, título III, § 13210(5), 2 de novembro de 2002, 116 Stat. 1909; Pub. L. 108–419, § 4, 30 de novembro de 2004, 118 Stat. 2361; Pub. L. 109–9, título I, § 102(c), 27 de abril de 2005, 119 Stat. 220; Pub. L. 111–295, § 6(a), 9 de dezembro de 2010, 124 Stat. 3181.)
+
+\section{§ 102. Objeto dos direitos autorais: Em geral}
 
 \begin{enumerate}[label=(\alph*)]
-	\item A proteção de direitos autorais subsiste, de acordo com este título, em obras originárias fixadas em qualquer meio de expressão tangível, agora conhecido ou desenvolvido posteriormente, a partir do qual possam ser percebidas, reproduzidas ou de outra forma comunicadas, diretamente ou com o auxílio de uma máquina ou dispositivo. Obras originárias incluem as seguintes categorias:
-	\begin{enumerate}[label=(\arabic*)]
-		\item obras literárias;
-		\item obras musicais, incluindo quaisquer palavras acompanhantes;
-		\item obras dramáticas, incluindo qualquer música acompanhante;
-		\item pantomimas e trabalhos coreográficos;
-		\item obras pictóricas, gráficas e escultóricas;
-		\item filmes e outras obras audiovisuais;
-		\item gravações de som; e
-		\item obras arquitetônicas.
-	\end{enumerate}
-	\item Em nenhum caso a proteção de direitos autorais para uma obra originária se estende a qualquer ideia, procedimento, processo, sistema, método de operação, conceito, princípio ou descoberta, independentemente da forma com que são descritos, explicados, ilustrados, ou incorporados em tal trabalho.
+    \item A proteção autoral subsiste, de acordo com este título, em obras originais de autoria fixadas em qualquer meio tangível de expressão, atualmente conhecido ou que venha a ser desenvolvido no futuro, a partir do qual possam ser percebidas, reproduzidas ou de outro modo comunicadas, seja diretamente, seja com o auxílio de uma máquina ou dispositivo. As obras de autoria incluem as seguintes categorias:
+    \begin{enumerate}[label=(\arabic*)]
+        \item obras literárias;
+        \item obras musicais, incluindo quaisquer letras que as acompanhem;
+        \item obras dramáticas, incluindo qualquer música que as acompanhe;
+        \item pantomimas e obras coreográficas;
+        \item obras pictóricas, gráficas e escultóricas;
+        \item filmes e outras obras audiovisuais;
+        \item gravações sonoras; e
+        \item obras arquitetônicas.
+    \end{enumerate}
+    \item Em nenhum caso a proteção de direitos autorais para uma obra original de autoria se estende a qualquer ideia, procedimento, processo, sistema, método de operação, conceito, princípio ou descoberta, independentemente da forma como seja descrita, explicada, ilustrada ou incorporada em tal obra.
 \end{enumerate}
+
+\subsection{Histórico legislativo}
+
+(Pub. L. 94–553, título I, § 101, 19 de outubro de 1976, 90 Stat. 2544; Pub. L. 101–650, título VII, § 703, 1º de dezembro de 1990, 104 Stat. 5133.)
+
+\backmatter                                           % bibliografia, índice etc.
+
+\chapter*{Referências}
+\addcontentsline{toc}{chapter}{Referências}
+Aqui vão suas referências manualmente ou com BibTeX/BibLaTeX.
+
+\chapter*{Índice remissivo}
+\addcontentsline{toc}{chapter}{Índice remissivo}
+
+\verb|\usepackage{imakeidx}| → no Preâmbulo
+
+\verb|\index{}| → marca no texto para ser indexado
+
+\verb|\makeindex| → processa
+
+\verb|\printindex| → mostra
 
 \end{document}
