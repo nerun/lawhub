@@ -1,0 +1,36 @@
+# LaTeX core auxiliary files
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+
+# Bibliography
+*.bbl
+*.blg
+
+# Index
+*.idx
+*.ilg
+*.ind
+
+# latexmk / build system
+*.fls
+*.fdb_latexmk
+
+# SyncTeX
+*.synctex.gz
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# PDFs (ignore only if you don't version outputs)
+*.pdf
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
