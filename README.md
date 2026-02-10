@@ -2,61 +2,76 @@
 
 Textos jurídicos, legislação, pesquisas e traduções.
 
-## 1 Por que o LaTeX?
+## Por que o LaTeX?
 
-1. Ele é muito fácil de aprender.
+1. LaTeX cobra tempo de aprendizado antes de entregar produtividade.
+A vantagem aparece depois: textos longos e complexos tornam-se mais fáceis de manter, revisar e padronizar do que em editores visuais.
 
-2. Por ser em modo texto é fácil verificar as mudanças no GitHub, facilitando o trabalho de comparar as mudanças, já que em binário (ODT ou DOCX) seria impossível. Haveria outras opções, porém:
+2. Por ser baseado em texto puro, permite controle de versões eficiente e comparação clara entre alterações.
+Em formatos binários (ODT ou DOCX), a comparação é possível, mas trabalhosa e pouco clara.
 
-    1. o formato TXT é simples demais;
+3. Outras alternativas existem, mas com limitações:
 
-    2. o formato MARKDOWN (MD) é um pouco melhor e muito mais fácil de aprender que o LaTeX, porém o LaTeX produz resultados visuais melhores, mesmo quando convertido para outros formatos;
+    1. TXT é simples demais.
 
-    3. criar uma Wiki usando o [MediaWiki](https://www.mediawiki.org) ou [DokuWiki](https://www.dokuwiki.org). As wikis permitem trabalho colaborativo, comparação de versões e links de download (externo). Porém, o formato não dá pra converter fácil. Cada artigo na wiki teria que ter um link para baixar o conteúdo em um formato amigável para edição. Dobraria o trabalho.
+    2. Markdown (MD) é fácil e amplamente difundido, mas não atende às necessidades de textos jurídicos estruturados.
 
-3. É fácil de converter para outros formatos usando o pandoc (vide abaixo).
+    3. AsciiDoc e reST são adequados à documentação técnica, mas o LaTeX continua sendo uma ferramenta profissional consolidada de editoração.
 
-4. Ao se dedicar ao LaTeX você estará aprendendo uma linguagem importante no meio acadêmico.
+    4. Wikis permitem colaboração e histórico de versões, mas exigem formatos externos para edição e distribuição, o que duplica o trabalho.
 
-### 1.1 Cursos online gratuitos
+4. Documentos em LaTeX podem ser convertidos facilmente para outros formatos usando o pandoc.
 
-Rápido e fácil:
+5. LaTeX é padrão no meio acadêmico e técnico. O esforço inicial é compensado pela durabilidade, consistência e portabilidade dos textos.
 
-* YOUTUBE. Professor Aquino - Matemática. [Introdução ao LaTeX (Curso Completo)](https://www.youtube.com/playlist?list=PLa_2246N48_p9ndUHlO255uvKtSR8mshE).
+## Cursos online gratuitos
 
-### 1.2 Programas de edição para Linux
+YouTube. Professor Aquino - Matemática.
+[Introdução ao LaTeX (Curso Completo)](https://www.youtube.com/playlist?list=PLa_2246N48_p9ndUHlO255uvKtSR8mshE).
+
+## Programas de edição para Linux
 
 - Texmaker
 - TeXstudio (fork do Texmaker)
 - Gummi
 
-### 1.3 Converter LaTeX para outros formatos
+## Converter LaTeX para outros formatos
 
 Instale o pandoc:
 
-```
-$ sudo apt install pandoc
+```console
+sudo apt install pandoc
 ```
 
-Para converter use a fórmula:
+Sintaxe básica de conversão:
 
-```
-$ pandoc <arquivo original> -o <arquivo destino>
+```console
+pandoc <arquivo_origem> -o <arquivo_destino>
 ```
 
 Exemplos:
 
+```console
+pandoc UCC.tex -o UCC.odt
+pandoc UCC.tex -o UCC.docx
+pandoc UCC.tex -o UCC.epub
 ```
-$ pandoc UCC.tex -o UCC.odt
-$ pandoc UCC.tex -o UCC.docx
-$ pandoc UCC.tex -o UCC.epub
-```
 
-É possível converter também para HTML e outros formatos, [consulte essa referência fácil](https://pandoc.org/demos.html).
+Outros formatos e exemplos:
+https://pandoc.org/demos.html
 
-## 2 Fontes
+## Fontes
 
-* CASTRO, Marcílio Moreira de. [Dicionário de Direito, Economia e Contabilidade](https://www.dropbox.com/s/g8h20zuppojlz0b/CASTRO%2C%20Marc%C3%ADlio%20Moreira%20de%20-%20Dicion%C3%A1rio%20de%20Direito%2C%20Economia%20e%20Contabilidade.pdf?dl=0): português-inglês / inglês-português. 4. ed. Rio de Janeiro: Forense, 2013.
-* LEGAL INFORMATION INSTITUTE (LII) of Cornell Law School. [Uniform Commercial Code](https://www.law.cornell.edu/ucc).
-* LEGAL INFORMATION INSTITUTE (LII) of Cornell Law School. [United States Code](https://www.law.cornell.edu/uscode/text).
-* OFFICE OF THE LAW REVISION COUNSEL of United States House of Representatives. [United States Code](https://uscode.house.gov).
+CASTRO, Marcílio Moreira de.
+Dicionário de Direito, Economia e Contabilidade.
+Português–inglês / inglês–português. 4. ed. Rio de Janeiro: Forense, 2013.
+[[download](https://www.dropbox.com/s/g8h20zuppojlz0b/CASTRO%2C%20Marc%C3%ADlio%20Moreira%20de%20-%20Dicion%C3%A1rio%20de%20Direito%2C%20Economia%20e%20Contabilidade.pdf?dl=0)]
+
+Legal Information Institute (LII), Cornell Law School.
+[Uniform Commercial Code](https://www.law.cornell.edu/ucc).
+
+Legal Information Institute (LII), Cornell Law School.
+[United States Code](https://www.law.cornell.edu/uscode/text).
+
+Office of the Law Revision Counsel, U.S. House of Representatives.
+[United States Code](https://uscode.house.gov).
