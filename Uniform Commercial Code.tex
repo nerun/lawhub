@@ -1,52 +1,157 @@
-% ===============================================================
-% PREÂMBULO =====================================================
-% ===============================================================
-\documentclass[a5paper,10pt]{book}
-\usepackage[margin=1.5cm]{geometry}
-\usepackage{setspace}
-\singlespacing
-\usepackage{indentfirst}
+% -----------------------------------------------------------------------------
+% PREÂMBULO ~ [LuaLaTeX]
+% -----------------------------------------------------------------------------
+\documentclass[a4paper, 12pt]{book}             % Tipo de documento:
+                                                %   [papel, tamanho da fonte]
+                                                %   {classe}
 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[brazilian]{babel}
+\usepackage[
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm
+]{geometry}                                     % Define as margens da página
 
-\setlocalecaption{brazilian}{contents}{\centering Sumário}
-\setcounter{secnumdepth}{-2}
+\usepackage[brazilian]{babel}                   % Hifenização e tradução em
+                                                % português do Brasil
 
-\usepackage{enumitem}
-\setlist[enumerate]{itemsep=1pt, parsep=1pt, topsep=1pt}
-\setlist[itemize]{itemsep=1pt, parsep=1pt, topsep=1pt}
+\usepackage{fontspec}                           % Seleção de fontes OpenType
+\usepackage{mathtools}                          % Fórmulas matemáticas e
+                                                % símbolos. Carrega amsmath,
+                                                % corrige bugs antigos dele e
+                                                % adiciona comandos úteis
+\usepackage{unicode-math}                       % Matemática em Unicode
+\setmainfont{TeX Gyre Termes}                   % Fonte Times-like para o texto
+\setmathfont{TeX Gyre Termes Math}              % Fonte matemática compatível
 
-\usepackage{amsmath, amsfonts, amssymb}
-\usepackage{xcolor,soul}
-\usepackage{lipsum}
+\usepackage{microtype}                          % Melhora a tipografia com
+                                                % microajustes
 
-\newcommand{\autor}{Daniel Dias Rodrigues}
-\newcommand{\titulo}{Código Comercial Uniforme}
+\usepackage{setspace}                           % Permite configurar
+                                                % espaçamento entre linhas
+\singlespacing                                  % Define espaçamento simples
+                                                % entre linhas
+\usepackage{indentfirst}                        % Indenta o primeiro parágrafo
+                                                % de cada seção
+\usepackage{titlesec}                           % Permite customizar títulos
+                                                % de seções
 
-% CABEÇALHO
-\title{\textbf{\titulo}}
-\author{\textit{tradução de}\\\autor}
-\date{13 de Janeiro de 2021}
+\titleformat{\paragraph}                        % Define o estilo do título
+                                                % de parágrafos
+    {\normalfont\normalsize\bfseries}           % Texto normal, tamanho normal,
+                                                % negrito
+    {\theparagraph}                             % Exibe o número do parágrafo
+    {1em}                                       % Espaço entre o número e
+                                                % o título
+    {}
 
-\usepackage[pdftex,
-            pdfauthor={\autor},
-            pdftitle={\titulo},
-            pdfsubject={Tradução de legislação americana},
-            pdfkeywords={Lei, Direito, Estados Unidos},
-            pdfproducer={Texmaker 5.0.3 (pdfTeX 1.40.22)},
-            pdfcreator={LaTeX com hyperref}]{hyperref}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=black,
-    filecolor=magenta,
-    urlcolor=blue,
+\titlespacing*{\paragraph}                      % Define o espaçamento do
+                                                % título de parágrafo
+    {0pt}
+    {1.5ex plus 1ex minus .2ex}
+    {1ex plus .2ex}                             % Espaçamentos antes e depois
+                                                % do parágrafo
+
+\titleformat{\subparagraph}                     % Define o estilo do título
+                                                % de subparágrafos
+    {\normalfont\normalsize\bfseries\itshape}   % Texto normal, tamanho normal,
+                                                % negrito e itálico
+    {\thesubparagraph}                          % Exibe o número do
+                                                % subparágrafo
+    {1em}                                       % Espaço entre o número e
+                                                % o título
+    {}
+
+\titlespacing*{\subparagraph}                   % Define o espaçamento do
+                                                % título de subparágrafo
+    {0pt}
+    {1ex plus 0.5ex minus .2ex}
+    {0.5ex plus .2ex}                           % Espaçamentos antes e depois
+                                                % do subparágrafo
+
+\addto\captionsbrazilian{                       % Centraliza e renomeia a seção
+                                                % de sumário
+    \renewcommand{\contentsname}{%
+        \centering Sumário%
+    }
 }
 
-% ===============================================================
-% CORPO DO DOCUMENTO ============================================
-% ===============================================================
+\setcounter{secnumdepth}{-2}                    % Define o nível máximo de
+                                                % numeração de seções
+                                                %  0 → numera só \part
+                                                %  1 → numera \chapter
+                                                %  2 → numera \section
+                                                %  3 → numera \subsection
+                                                % -2 → nada é numerado
+
+\setlength{\skip\footins}{0.75cm}               % Espaçamento entre o texto e
+                                                % as notas de rodapé
+\usepackage[hang]{footmisc}                     % Estilo de nota com recuo
+                                                % ("hang" = pendente)
+\setlength{\footnotemargin}{3mm}                % Define margem esquerda para
+                                                % notas de rodapé
+
+\usepackage{enumitem}                           % Personaliza listas
+                                                % (itemize/enumerate)
+\setlist[enumerate]{                            % Espaçamentos em listas
+    itemsep=1pt,
+    parsep=1pt,
+    topsep=1pt
+}
+\setlist[itemize]{                              % Espaçamentos em listas não
+    itemsep=1pt,                                % numeradas
+    parsep=1pt,
+    topsep=1pt
+}
+
+\usepackage[svgnames, x11names]{xcolor}         % Permite usar nomes SVG e X11
+                                                % para cores
+\usepackage{lipsum}                             % Gera texto de exemplo
+                                                % (Lorem Ipsum)
+\SetLipsumLanguage{brazilian}                   % Evita que lipsum tente mudar
+                                                % a língua para latim
+\usepackage{soul}                               % Permite sublinhar, riscar e
+                                                % destacar texto
+
+\newcommand{\autor}{Daniel Dias Rodrigues}      % Define comando personalizado
+                                                % para o autor
+\newcommand{\titulo}{Código Comercial Uniforme} % Define comando personalizado
+                                                % para o título
+
+\title{\titulo}                                 % Define o título. Concatena
+\author{\textit{tradução de}\\\autor}           % Define o autor, usando o
+                                                % comando personalizado
+
+\usepackage[useregional]{datetime2}             % Personaliza o formato da data
+\date{\DTMtoday}                                % A data do documento é "hoje"
+
+\newcommand{\us}[1]{                            % Define comando que sublinha
+    \underline{\smash{#1}}                      % sem afetar o espaçamento
+}                                               % vertical
+
+\usepackage[
+    pdfauthor={\autor},                         % Define o autor nos metadados
+                                                % do PDF
+    pdftitle={\titulo},                         % Define o título nos metadados
+                                                % do PDF
+    pdfsubject={Tradução de lei americana},     % Campo de assunto do PDF
+    pdfkeywords={
+        lei,
+        direito,
+        estados unidos,
+        tradução}                               % Define palavras-chave do PDF
+]{hyperref}                                     % Ativa links no documento
+
+\hypersetup{
+    colorlinks=true,                            % Habilita links coloridos
+    linkcolor=black,                            % Cor dos links internos
+    filecolor=magenta,                          % Cor de links para arquivos
+    urlcolor=blue                               % Cor de links para URLs
+}
+
+% -----------------------------------------------------------------------------
+% CORPO DO DOCUMENTO
+% -----------------------------------------------------------------------------
 \begin{document}
 
 \maketitle
